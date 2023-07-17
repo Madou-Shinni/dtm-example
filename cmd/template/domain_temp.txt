@@ -1,0 +1,19 @@
+package domain
+
+import (
+	"github.com/Madou-Shinni/gin-quickstart/pkg/model"
+	"github.com/Madou-Shinni/gin-quickstart/pkg/request"
+)
+
+type {{.Module}} struct {
+	model.Model
+}
+
+type Page{{.Module}}Search struct {
+	{{.Module}}
+	request.PageSearch
+}
+
+func ({{.Module}}) TableName() string {
+	return "{{.ModuleCamelToSnake}}"
+}
